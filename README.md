@@ -57,7 +57,7 @@ On the other hand,
 ## Difference b/w TSS (Total Sum of Squares) & RSS (Residual Sum of Square)
 <img src="https://latex.codecogs.com/svg.image?RSS=\sum_{i=1}^{n}(y_i-\hat{y}_i)^2\cdots\cdots(3.16)">
 
-TSS=yi-y2
+<img src="https://latex.codecogs.com/svg.image?TSS=\sum{(y_i-\bar{y})^2}">
 
 **TSS** measures the total variance in the response **Y** and can be thought of as the amount of variability inherent in the response before the regression is performed. In contrast, **RSS** measures the amount of variability that is left unexplained after performing the regression. Hence, TSS-RSS measures the amount of variability in the response that is explained (or removed) by performing the regression 
 ## Difference b/w R2 and Adjusted R2

@@ -1,4 +1,4 @@
-# Data-Science-Interview-Preparation\
+# Data-Science-Interview-Preparation
 #
 ## Generative vs Discriminative Models
 ## Difference b/w generative & discriminative models
@@ -65,17 +65,19 @@ On the other hand,
 
 
 |**R2**|**Adjusted R2**|
-| :-: | :-: |
-|R2=TSS - RSSTSS = 1 - RSSTSS|Adjusted R2=1 - RSS/n-d-1TSS/n-1, where n = number of data points, d = model with d variables|
-|R2 will increase as more variables are added to the model.|<p>Maximizing the Adjusted R2 is equivalent to minimizing RSSn-d-1 . While RSS always decreases as the number of variables in the model increases, RSS/(n-d-1) may increase or decrease, due to the presence of d in the denominator.</p><p>The intuition behind the adjusted R2 is that, once all of the correct variables have been included in the model, adding additional noise variables will lead to only a very small decrease in RSS. Since adding noise variables leads to an increase in d, such variables will lead to an increase in RSS/(n-d-1), and consequently a decrease in the adjusted R2. Therefore, in theory, the model with the largest adjusted R2 will have only correct variables and no noise variables.</p>|
+| :-- | :-- |
+|<img src="https://latex.codecogs.com/svg.image?R^2=\frac{TSS-RSS}{TSS}=\frac{1-RSS}{TSS}">|<img src="https://latex.codecogs.com/svg.image?{Adjusted&space;R^2}=1-\frac{{RSS}/{(n-d-1)}}{{TSS}/{(n-1)}}">, where n = number of data points, d = model with d variables|
+|<img src="https://latex.codecogs.com/svg.image?R^2"> will increase as more variables are added to the model.|<p>Maximizing the <img src="https://latex.codecogs.com/svg.image?Adjusted&space;R^2"> is equivalent to minimizing <img src="https://latex.codecogs.com/svg.image?{RSS}/{(n-d-1)}">. While RSS always decreases as the number of variables in the model increases, RSS/(n-d-1) may increase or decrease, due to the presence of d in the denominator.</p><p>The intuition behind the <img src="https://latex.codecogs.com/svg.image?Adjusted&space;R^2"> is that, once all of the correct variables have been included in the model, adding additional noise variables will lead to only a very small decrease in RSS. Since adding noise variables leads to an increase in d, such variables will lead to an increase in RSS/(n-d-1), and consequently a decrease in the <img src="https://latex.codecogs.com/svg.image?Adjusted&space;R^2">. Therefore, in theory, the model with the largest <img src="https://latex.codecogs.com/svg.image?Adjusted&space;R^2"> will have only correct variables and no noise variables.</p>|
 
 
 
 ## LR-Assumptions & Verification
 1. [7 Classical Assumptions of Ordinary Least Squares (OLS) Linear Regression - Statistics By Jim](https://statisticsbyjim.com/regression/ols-linear-regression-assumptions/)
 1. [Verifying the Assumptions of Linear Regression in Python and R | by Eryk Lewinson | Towards Data Science](https://towardsdatascience.com/verifying-the-assumptions-of-linear-regression-in-python-and-r-f4cd2907d4c0#:~:text=Verifying%20the%20Assumptions%20of%20Linear%20Regression%20in%20Python,the%20context%20of%20linear%20regression.%20More%20items...%20)
-1. Random error ε has E(ε) = 0
-1. ε is independent of X
+
+Following are the assumptions:
+1. Random error \[\Epsilon \epsilon\] has E(ε) =0
+. ε is independent of X
 1. *[Source: ISLR Page-86]*: Two of the most important assumptions state that the relationship between the predictors and response are additive and linear. The additive assumption means that the effect of changes in a predictor Xj on the response Y is independent of the values of the other predictors. The linear assumption states that the change in the response Y due to a one-unit change in Xj is constant, regardless of the value of Xj
 1. *[Source: ISLR Page-93]*: An important assumption of the linear regression model is that the error terms, ε1,ε2, …,εn, are uncorrelated.
 1. *[Source: ISLR Page-95]*: Error terms have a constant variance, Varεi =σ2. Unfortunately, it is often the case that the variances of the error terms are non-constant. For instance, the variances of the error terms may increase with the value of the response. One can identify non-constant variances in the errors, or heteroscedasticity, from the presence of a funnel shape in the residual plot.

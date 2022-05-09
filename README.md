@@ -76,11 +76,11 @@ On the other hand,
 1. [Verifying the Assumptions of Linear Regression in Python and R | by Eryk Lewinson | Towards Data Science](https://towardsdatascience.com/verifying-the-assumptions-of-linear-regression-in-python-and-r-f4cd2907d4c0#:~:text=Verifying%20the%20Assumptions%20of%20Linear%20Regression%20in%20Python,the%20context%20of%20linear%20regression.%20More%20items...%20)
 
 Following are the assumptions:
-1. Random error \[\Epsilon \epsilon\] has E(ε) =0
-. ε is independent of X
-1. *[Source: ISLR Page-86]*: Two of the most important assumptions state that the relationship between the predictors and response are additive and linear. The additive assumption means that the effect of changes in a predictor Xj on the response Y is independent of the values of the other predictors. The linear assumption states that the change in the response Y due to a one-unit change in Xj is constant, regardless of the value of Xj
-1. *[Source: ISLR Page-93]*: An important assumption of the linear regression model is that the error terms, ε1,ε2, …,εn, are uncorrelated.
-1. *[Source: ISLR Page-95]*: Error terms have a constant variance, Varεi =σ2. Unfortunately, it is often the case that the variances of the error terms are non-constant. For instance, the variances of the error terms may increase with the value of the response. One can identify non-constant variances in the errors, or heteroscedasticity, from the presence of a funnel shape in the residual plot.
+1. Random error <img src="https://latex.codecogs.com/svg.image?\varepsilon"> has <img src="https://latex.codecogs.com/svg.image?E(\varepsilon)=0">
+1. <img src="https://latex.codecogs.com/svg.image?\varepsilon"> is independent of X
+1. **[Source: ISLR Page-86]**: Two of the most important assumptions state that the relationship between the predictors and response are additive and linear. The additive assumption means that the effect of changes in a predictor <img src="https://latex.codecogs.com/svg.image?X_j"> on the response Y is independent of the values of the other predictors. The linear assumption states that the change in the response Y due to a one-unit change in <img src="https://latex.codecogs.com/svg.image?X_j"> is constant, regardless of the value of <img src="https://latex.codecogs.com/svg.image?X_j">
+1. **[Source: ISLR Page-93]**: An important assumption of the linear regression model is that the error terms, ε1,ε2, …,εn, are uncorrelated.
+1. **[Source: ISLR Page-95]**: Error terms have a constant variance, <img src="https://latex.codecogs.com/svg.image?Var(\varepsilon_i)=\sigma^2">. Unfortunately, it is often the case that the variances of the error terms are non-constant. For instance, the variances of the error terms may increase with the value of the response. One can identify non-constant variances in the errors, or heteroscedasticity, from the presence of a funnel shape in the residual plot.
 ## Implication of the assumption that errors are independent & identically distributed
 Because of this assumption, we average squared errors uniformly in our Expected Prediction error criterion. If the errors were dependent, then, weightage of each error might have been different in the error function.
 ## Difference b/w Collineraity & Multi Collinearity 
@@ -89,7 +89,7 @@ Because of this assumption, we average squared errors uniformly in our Expected 
 
 **Collinearity** is a linear association between two explanatory variables. Multicollinearity in a multiple regression model are highly linearly related associations between two or more explanatory variables. 
 
-In case of perfect **multicollinearity**, the design matrix X has less than full rank, and therefore the moment matrix XTX cannot be matrix inverted. Under these circumstances, for a general linear model y=Xβ+ϵ, the ordinary least-squares estimator βOLS=XTX-1XTy does not exist.
+In case of perfect **multicollinearity**, the design matrix X has less than full rank, and therefore the moment matrix <img src="https://latex.codecogs.com/svg.image?X^TX"> cannot be matrix inverted. Under these circumstances, for a general linear model <img src="https://latex.codecogs.com/svg.image?y=x\beta+\epsilon">, the ordinary least-squares estimator <img src="https://latex.codecogs.com/svg.image?\beta_{OLS}={(X^TX)}^{-1}X^Ty"> does not exist.
 ## How to assess Multicollinearity?
 ***[Source: ISLR Page-101]*** Instead of inspecting the correlation matrix, a better way to assess multicollinearity is to compute the variance inflation factor (VIF). The VIF is variance inflation factor, the ratio of the variance of βj when fitting the full model divided by the variance of βj if fit on its own. The smallest possible value for VIF is 1, which indicates the complete absence of collinearity
 ## How to assess the quality of Linear Regression model?

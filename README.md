@@ -93,7 +93,7 @@ In case of perfect **multicollinearity**, the design matrix X has less than ful
 ## How to assess Multicollinearity?
 ***[Source: ISLR Page-101]*** Instead of inspecting the correlation matrix, a better way to assess multicollinearity is to compute the variance inflation factor (VIF). The VIF is variance inflation factor, the ratio of the variance of βj when fitting the full model divided by the variance of βj if fit on its own. The smallest possible value for VIF is 1, which indicates the complete absence of collinearity
 ## How to assess the quality of Linear Regression model?
-***[Source: ISLR Page-68]***. The quality of a linear regression fit is typically assessed using two related quantities: the residual standard error (RSE) and the R2 statistic.
+***[Source: ISLR Page-68]***. The quality of a linear regression fit is typically assessed using two related quantities: the residual standard error (RSE) and the <img src="https://latex.codecogs.com/svg.image?R^2"> statistic.
 
 
 ![A picture containing text, clock, watch

@@ -98,17 +98,17 @@ In case of perfect **multicollinearity**, the design matrix X has less than ful
 ***[Source: ISLR Page-68]***. The quality of a linear regression fit is typically assessed using two related quantities: the residual standard error (RSE) and the <img src="https://latex.codecogs.com/svg.image?R^2"> statistic.
 
 
-![A picture containing text, clock, watch Description automatically generated](images/Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.001.png)
+![A picture containing text, clock, watch Description automatically generated](images/ds-interview/Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.001.png)
 
 where,
 
-![A picture containing chart Description automatically generated](images/RSS.png)
+![A picture containing chart Description automatically generated](images/ds-interview/RSS.png)
 
 The RSE provides an absolute measure of lack of fit of the model (3.5) to the data. But since it is measured in the units of Y, it is not always clear what constitutes a good RSE. The <img src="https://latex.codecogs.com/svg.image?R^2"> statistic provides an alternative measure of fit. It takes the form of a proportion—the proportion of variance explained—and so it always takes on a value between 0 and 1, and is independent of the scale of Y.
 
 To calculate <img src="https://latex.codecogs.com/svg.image?R^2">, we use the formula, 
 
-![Text Description automatically generated](images/Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.002.png)
+![Text Description automatically generated](images/ds-interview/Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.002.png)
 
 Where, 
 

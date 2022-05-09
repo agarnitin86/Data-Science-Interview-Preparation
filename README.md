@@ -1,5 +1,7 @@
 # Data-Science-Interview-Preparation
-#
+ISLR = Introduction to Statistical Learning  
+ESLR = Elements of Statistical Learning
+
 ## Generative vs Discriminative Models
 ## Difference b/w generative & discriminative models
 1. [Generative vs. Discriminative Machine Learning Models - Unite.AI](https://www.unite.ai/generative-vs-discriminative-machine-learning-models/)
@@ -100,7 +102,7 @@ In case of perfect **multicollinearity**, the design matrix X has less than ful
 
 where,
 
-![A picture containing chart Description automatically generated](images/Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.001.png)
+![A picture containing chart Description automatically generated](images/RSS.png)
 
 The RSE provides an absolute measure of lack of fit of the model (3.5) to the data. But since it is measured in the units of Y, it is not always clear what constitutes a good RSE. The <img src="https://latex.codecogs.com/svg.image?R^2"> statistic provides an alternative measure of fit. It takes the form of a proportion—the proportion of variance explained—and so it always takes on a value between 0 and 1, and is independent of the scale of Y.
 
@@ -110,13 +112,13 @@ To calculate <img src="https://latex.codecogs.com/svg.image?R^2">, we use the fo
 
 Where, 
 
-<img src="https://latex.codecogs.com/svg.image?TSS=\sum{(y_i-\bar{y})^2}"> is the total sum of squares, and RSS is defined in (3.16). TSS measures the total variance in the response Y, and can be thought of as the amount of variability inherent in the response before the regression is performed. In contrast, RSS measures the amount of variability that is left unexplained after performing the regression. Hence, TSS − RSS measures the amount of variability in the response that is explained (or removed) by performing the regression, and R2 measures the proportion of variability in Y that can be explained using X. 
+<img src="https://latex.codecogs.com/svg.image?TSS=\sum{(y_i-\bar{y})^2}"> is the total sum of squares, and RSS is defined in (3.16). TSS measures the total variance in the response Y, and can be thought of as the amount of variability inherent in the response before the regression is performed. In contrast, RSS measures the amount of variability that is left unexplained after performing the regression. Hence, TSS − RSS measures the amount of variability in the response that is explained (or removed) by performing the regression, and <img src="https://latex.codecogs.com/svg.image?R^2"> measures the proportion of variability in Y that can be explained using X. 
 ## Regression approaches in order of linearity
 ***[Source: ISLR Page-266]***
 
 
 |**Regression Approach**|**Explanation**|
-| :-: | :-: |
+| :-: | :-- |
 |Linear Regression||
 |Polynomial Regression|Polynomial regression extends the linear model by adding extra predictors, obtained by raising each of the original predictors to a power.|
 |Step Functions|Step functions cut the range of a variable into K distinct regions in order to produce a qualitative variable. This has the effect of fitting a piecewise constant function.|
@@ -136,7 +138,7 @@ Where,
 
 
 |Best subset|<p>1. For each k ∈ {0, 1, 2, . . . , p}, where p is #predictors, the subset of size k that gives smallest residual sum of squares.</p><p>2. Typically, we choose the smallest model that minimizes an estimate of the expected prediction error.</p>|
-| :- | :- |
+| :- | :-- |
 |Forward stepwise|<p>1. Is a greedy algorithm </p><p>2. Starts with the intercept, and,</p><p>3. then sequentially adds into the model the predictor that most improves the fit. With many candidate predictors, this might seem like a lot of computation; however, clever updating algorithms can exploit the QR decomposition for the current fit to rapidly establish the next candidate </p><p>4. for large p, we cannot compute the best subset sequence, but we can always compute the forward stepwise sequence(even when p ≫ N ).</p><p>5. forward stepwise is a more constrained search, and will have lower variance, but perhaps more bias than best subset</p>|
 |Backward stepwise|<p>1. starts with the full model, then,</p><p>2. Sequentially deletes the predictor that has the least impact on the fit. </p><p>3. The candidate for dropping is the variable with the smallest Z-score. Backward selection can only be used when N > p, while forward stepwise can always be used.</p>|
 |Hybrid selection|<p>consider both forward and backward moves at each step, and select</p><p>the “best” of the two.</p>|

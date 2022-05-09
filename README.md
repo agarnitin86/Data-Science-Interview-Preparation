@@ -96,27 +96,21 @@ In case of perfect **multicollinearity**, the design matrix X has less than ful
 ***[Source: ISLR Page-68]***. The quality of a linear regression fit is typically assessed using two related quantities: the residual standard error (RSE) and the <img src="https://latex.codecogs.com/svg.image?R^2"> statistic.
 
 
-![A picture containing text, clock, watch
-
-Description automatically generated](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.001.png)
+![A picture containing text, clock, watch Description automatically generated](images/Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.001.png)
 
 where,
 
-![A picture containing chart
+![A picture containing chart Description automatically generated](images/Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.001.png)
 
-Description automatically generated](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.001.png)
+The RSE provides an absolute measure of lack of fit of the model (3.5) to the data. But since it is measured in the units of Y, it is not always clear what constitutes a good RSE. The <img src="https://latex.codecogs.com/svg.image?R^2"> statistic provides an alternative measure of fit. It takes the form of a proportion—the proportion of variance explained—and so it always takes on a value between 0 and 1, and is independent of the scale of Y.
 
-The RSE provides an absolute measure of lack of fit of the model (3.5) to the data. But since it is measured in the units of Y, it is not always clear what constitutes a good RSE. The R2 statistic provides an alternative measure of fit. It takes the form of a proportion—the proportion of variance explained—and so it always takes on a value between 0 and 1, and is independent of the scale of Y.
+To calculate <img src="https://latex.codecogs.com/svg.image?R^2">, we use the formula, 
 
-To calculate R2 , we use the formula, 
-
-![Text
-
-Description automatically generated](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.002.png)
+![Text Description automatically generated](images/Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.002.png)
 
 Where, 
 
-TSS=yi-y2 is the total sum of squares, and RSS is defined in (3.16). TSS measures the total variance in the response Y, and can be thought of as the amount of variability inherent in the response before the regression is performed. In contrast, RSS measures the amount of variability that is left unexplained after performing the regression. Hence, TSS − RSS measures the amount of variability in the response that is explained (or removed) by performing the regression, and R2 measures the proportion of variability in Y that can be explained using X. 
+<img src="https://latex.codecogs.com/svg.image?TSS=\sum{(y_i-\bar{y})^2}"> is the total sum of squares, and RSS is defined in (3.16). TSS measures the total variance in the response Y, and can be thought of as the amount of variability inherent in the response before the regression is performed. In contrast, RSS measures the amount of variability that is left unexplained after performing the regression. Hence, TSS − RSS measures the amount of variability in the response that is explained (or removed) by performing the regression, and R2 measures the proportion of variability in Y that can be explained using X. 
 ## Regression approaches in order of linearity
 ***[Source: ISLR Page-266]***
 

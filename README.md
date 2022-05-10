@@ -16,10 +16,12 @@ ESLR = Elements of Statistical Learning
 |Generative models are useful for unsupervised machine learning tasks.|Discriminative models are useful for supervised machine learning tasks.|
 |<p>Generative models are impacted by the presence of outliers more than discriminative models.</p><p></p>|<p>Discriminative models have the advantage of being more robust to outliers, unlike the generative models.</p><p>Discriminative models are more robust to outliers compared to generative models.</p>|
 |E.g. Linear Discriminant Analysis, HMM, Bayesian Networks|E.g. SVM, Logistic regression, Decision Trees, Random Forests|
+</details>
 
 # Parametric & Non-Parametric models
 ## Difference b/w parametric & non-parametric models
 ***[Source: ISLR Page-21]*:** 
+
 
 Parametric methods involve a two-step model-based approach.
 
@@ -146,3 +148,724 @@ Where,
 ## What is confidence interval and prediction interval in Linear Regression?
 ## Derive equations for Least squares in vector & matrix notation
 ## Can we use Linear Regression for binary classification?
+
+# SVM
+## How does SVM select support vectors?
+## Variations of SVM
+1. Maximal Margin Classifier
+1. Support Vector Classifier
+1. Support Vector Machines
+## What is Hyperplane?
+[Source ISLR, Page 68] In a p-dimensional space, a hyperplane is a flat affine subspace of hyperplane dimension p −1 For instance, in two dimensions, a hyperplane is a flat one-dimensional subspace—in other words, a line. In three dimensions, a hyperplane is a flat two-dimensional subspace—that is, a plane. In p > 3 dimensions, it can be hard to visualize a hyperplane, but the notion of a
+
+(p − 1)-dimensional flat subspace still applies. The mathematical definition of a hyperplane is quite simple. In two dimensions, a hyperplane is defined by the equation
+
+![](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.003.png)
+
+In p-dimensional setting,
+
+![](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.004.png)
+
+If a point X = (X 1 , X2, . . . , Xp )T in p-dimensional space (i.e. a vector of length p) satisfies above eq., then X lies on the hyperplane.
+
+Now, suppose that X does not satisfy the eq; rather,
+
+![](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.005.png)
+
+Then, X lies to one side of the hyperplane
+
+On the other hand, If, 
+
+![](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.006.png)
+
+Then, X lies to the other side of the hyperplane.
+
+Some Resource on equation of line  <https://math.stackexchange.com/questions/2533114/equation-of-a-hyperplane-in-two-dimensions>
+
+## Comparison b/w Maximal Margin Classifier, Support Vector Classifier, Support Vector Machine
+
+
+|MM Classifier|SVC|SVM|
+| :- | :- | :- |
+|Used when separating hyperplane exist.|generalization of the maximal margin classifier to the non-separable case|Generalization of SVC to non-separable & non-linear cases using Kernels|
+|When separating hyperplane does not exist, the optimization problem has no solution with M > 0|Uses soft margin to identify hyperplane that almost separates the classes|Uses soft margin to identify hyperplane that almost separates the classes|
+|An observation can only be on the right side of the margin, and the hyperplane|An observation can be not only on the wrong side of the margin, but also on the wrong side of the hyperplane.|An observation can be not only on the wrong side of the margin, but also on the wrong side of the hyperplane.|
+||Only observations that either lie on the margin or that violate the margin will affect the hyperplane, and hence the classifier obtained.|–Same as SVC–|
+||Changing the position of an observation that lies strictly on the correct side of the margin would not change the classifier at all, provided that its position remains on the correct side of the margin|–Same as SVC–|
+||Observations that lie directly on the margin, or on the wrong side of the margin for their class, are known as support vectors|–Same as SVC–|
+||When the tuning parameter C is large, then the margin is wide, many observations violate the margin, and so there are many support vectors. In this case, many observations are involved in determining the hyperplane. This classifier has low variance and potentially high bias. When C is small ->> fewer support vector ->> High variance, low bias||
+
+
+
+
+#
+# KNN
+## Effect of K on training error
+[Source: ESLR, Page 15] Error on the training data should be approximately an increasing function of k, and will always be 0 for k = 1. 
+
+It appears that k-nearest-neighbor fits have a single parameter, the number of neighbors k, compared to the p parameters in least-squares fits. Although this is the case, we will see that the effective number of parameters of k-nearest neighbors is N/k and is generally bigger than p, and decreases with increasing k. To get an idea of why, note that if the neighborhoods were nonoverlapping, there would be N/k neighborhoods and we would fit one parameter (a mean) in each neighborhood. It is also clear that we cannot use sum-of-squared errors on the training
+
+set as a criterion for picking k, since we would always pick k = 1.
+## How does bias & variance vary for KNN with the choice of K?
+A.4. [Source: ISLR Page 40] The choice of K has a drastic effect on the KNN classifier obtained. When K = 1, the decision boundary is overly flexible and finds patterns in the data that don’t correspond to the Bayes decision boundary. This corresponds to a classifier that has low bias but very high variance. As K grows, the method becomes less flexible and produces a decision boundary that is close to linear. This corresponds to a low-variance but high-bias classifier. 
+
+Just as in the regression setting, there is not a strong relationship between the training error rate and the test error rate. With K = 1, the KNN training error rate is 0, but the test error rate may be quite high. In general, as we use more flexible classification methods, the training error rate will decline but the test error rate may not. 
+
+#
+# Classification
+## Some approaches
+1. Using linear regression of a Indicator Matrix
+1. Linear Discriminant Analysis![](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.007.png)
+1. Quadratic Discriminant Analysis
+1. Regularized Discriminant Analysis [ESLR Page 112] 
+1. Logistic Regression
+## Difference b/w Logistic Regression & Linear Discriminant Analysis
+[Source ISLR Page 151]
+
+
+|**Logistic Regression**|**Linear DA**|
+| :-: | :-: |
+|Parameters Beta0 & Beta1 are estimated using Maximum Likelihood estimation|Parameters are estimated using estimated mean & variance from normal distribution|
+|Decision boundary- Linear|Decision boundary- Linear|
+|` `logistic regression can outperform LDA if these Gaussian assumptions are not met|LDA assumes that the observations are drawn from a Gaussian distribution with a common covariance matrix in each class, and so can provide some improvements over logistic regression when this assumption approximately holds.|
+
+## Difference b/w Linear & Quadratic Discriminant Analysis
+[Source: ESLR and Page 109 and <https://web.stanford.edu/class/stats202/content/lec9.pdf>]
+
+
+|**Linear DA**|**Quadratic DA**|
+| :-: | :-: |
+|All the classes have common covariance matrix Σk = Σ ∀ *k*|Each class has its own covariance matrix, Σk|
+|Decision boundary- Linear|Decision boundary- Quadratic|
+|Discriminant Function![](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.008.png)|<p>Discriminant Function</p><p>![](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.009.png)</p>|
+|Since covariance matrices is common for all classes no such problem|Since separate covariance matrices must be computed for each class, when p (#Features) is large, number of parameters increases dramatically.|
+|[Source: ISLR Page 142] LDA classifier results from assuming that the observations within each class come from a normal distribution with a class-specific mean vector and a common variance σ2|[Source: ISLR Page 142] LDA classifier results from assuming that the observations within each class come from a normal distribution with a class-specific mean vector and covariance matrix Σk|
+|With p predictors, estimating a covariance matrix requires estimating p(p+1)/2 parameters. |With p predictors and K classses, estimating a covariance matrix requires estimating K.p(p+1)/2 parameters|
+|LDA is a much less flexible classifier|QDA is a more flexible classifier|
+|Can have low variance high bias||
+
+#
+# Logistic Regression
+
+## Write the Logistic Function
+
+
+## Log odds
+
+![](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.010.png)
+
+## How to fit a logistic regression model?
+A.2. Although we could use (non-linear) least squares to fit the logistic model , the more general method of maximum likelihood is preferred, since it has better statistical properties.
+
+## Classification Evaluation Metrics
+1. Sensitivity = Recall = True Positive Rate
+   1. ` `TPTP+FN
+1. Specificity = True Negative Rate
+   1. TNTN+FP
+1. Precision
+   1. TPTP+FP
+1. False Positive Rate
+   1. FPFP+TN
+
+A.2. Although we could use (non-linear) least squares to fit the logistic model , the more general 
+## What happens when the classes are well separated in Logistic Regression?
+A.3. When the classes are well-separated, the parameter estimates for the logistic regression model are surprisingly unstable. Linear discriminant analysis does not suffer from this problem.
+
+<https://stats.stackexchange.com/questions/224863/understanding-complete-separation-for-logistic-regression>
+
+<https://stats.stackexchange.com/questions/239928/is-there-any-intuitive-explanation-of-why-logistic-regression-will-not-work-for>
+
+[Source ESLR, Page 128] If the data in a two-class logistic regression model can be perfectly separated by a hyperplane, the maximum likelihood estimates of the parameters are undefined (i.e., infinite; see Exercise 4.5). The LDA coefficients for the same data will be well defined, since the marginal likelihood will not permit these degeneracies.
+## Compare SVM & Logistic Regression
+[Source ISLR, Page 357]SVM loss function is exactly zero for observations for which yi(β0 + β1xi1 + ... + βpxip) ≥ 1; these correspond to observations that are on the correct side of the margin. In contrast, the loss function for logistic regression is not exactly zero anywhere. But it is very small for observations that are far from the decision boundary. Due to the similarities between their loss functions,  logistic regression and the support vector classifier often give very similar results. When the classes are well separated, SVMs tend to behave better than logistic regression; in more overlapping regimes, logistic regression is often preferred.
+
+
+
+
+# Lasso & Ridge Regression
+
+## Difference between Ridge & Lasso regression.
+
+Ridge regression:
+
+![](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.011.png)
+
+Lasso Regression:
+
+![](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.012.png)
+
+|Ridge Regression|Lasso Regression|
+| :- | :- |
+|The shrinkage penalty is applied to β1, . . . , βp , but not to the intercept β 0 . we do not want to shrink the intercept, which is simply a measure of the mean value of the response when xi1 = xi2 = . . . = xip = 0. (More explanation in ESLR pg. 64)||
+|<p>It is best to apply ridge regression after</p><p>standardizing the predictors, using the formula</p><p>![](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.013.png)</p><p>Because, the ridge solutions are not equivariant under scaling of the inputs.</p>||
+|Ridge regression will include all p predictors in the final model. The penalty λ.Σβj2 in (6.5) will shrink all of the coefficients towards zero, but it will not set any of them exactly to zero (unless λ = ∞). This may not be a problem for prediction accuracy, but it can create a challenge in model interpretation in settings in which the number of variables p is quite large. |L1 penalty has the effect of forcing some of the coefficient estimates to be exactly equal to zero when the tuning parameter λ is sufficiently large.|
+|Uses l2 penalty|Uses l1 penalty|
+|The l2 norm of a coefficient vector β is given by ||β||2 = ∑βj2|The l1 norm of a coefficient vector β is given by ||β||1 = ∑|βj|.|
+|||
+|Will include all p predictors in the final model|Performs variable selection by setting coefficients of some to the variables to 0|
+|Does not yield sparse models|lasso yields sparse models|
+|It produces less interpretable models that involve all the predictors.|it produces simpler and more interpretable models that involve only a subset of the predictors.|
+|In the case of orthonormal inputs, the ridge estimates are just a scaled version of the least squares estimates, that is, β̂ ridge = β̂/(1 + λ).||
+|||
+
+## Bayesian Interpretation for Ridge Regression and the Lasso
+
+## Why is it that the lasso, unlike ridge regression, results in coefficient estimates that are exactly equal to zero?
+A.2. Refer to page 221 of Introduction to Statistical Learning. Section- “*The Variable Selection Property of the Lasso*”
+
+
+# Decision Trees
+
+## Gini Index
+
+![](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.014.png)
+
+Here p̂mk represents the proportion of training observations in the mth region that are from the kth class. a measure of total variance across the K classes. It is not hard to see that the Gini index takes on a small value if all of the p̂mk ’s are close to zero or  one. For this reason the Gini index is referred to as a measure of node purity—a small value  indicates that a node contains predominantly observations from a single class. 
+
+## Cross-Entropy
+
+Since 0 ≤ p̂mk ≤ 1, it follows that 0 ≤ −p̂mk log p̂mk . One can show that the cross-entropy will take on a value near zero if the p̂mk ’s are all near zero or near one. Therefore, like the Gini index, the cross-entropy will take on a small value if the mth node is pure. In fact, it turns out that the Gini index and the cross-entropy are quite similar numerically. ![](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.015.png)
+
+## Why Bagging reduces over-fitting or variance?
+[Source: ISLR Page 316] Given a set of n independent observations Z1 , . . . , Zn , each with variance σ2 , the variance of the mean Z̄ of the observations is given by σ2 /n. In other words, averaging a set of observations reduces variance. 
+
+Explanation of why the above happens: <https://en.wikipedia.org/wiki/Variance#Properties>
+
+Hence a natural way to reduce the variance and hence increase the prediction accuracy of a statistical learning method is to take many training sets from the population, build a separate prediction model using each training set, and average the resulting predictions. In other words, we could calculate fˆ1 (x), fˆ2 (x), . . . , fˆB (x) using B separate training sets, and average them in order to obtain a single low-variance statistical learning model, given by
+
+![](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.016.png)
+
+Of course, this is not practical because we generally do not have access to multiple training sets. Instead, we can bootstrap, by taking repeated samples from the (single) training data set. In this approach we generate B different bootstrapped training data sets. We then train our method on the bth bootstrapped training set in order to get f\*B (x), and finally average all the predictions, to obtain
+
+![](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.017.png)
+## OOB Error Estimation
+[Source: ISLR Page 317] The key to bagging is that trees are repeatedly fit to bootstrapped subsets of the observations. One can show that on average, each bagged tree makes use of around two-thirds of the observations. The remaining one-third of the observations not used to fit a given bagged tree are referred to as the out-of-bag (OOB) observations. We can predict the response for the ith observation using each of the trees in which that observation was OOB. This will yield around B/3 predictions for the ith observation. In order to obtain a single prediction for the ith observation, we can average these predicted responses (if regression is the goal) or can take a  majority vote (if classification is the goal). This leads to a single OOB prediction for the ith observation. An OOB prediction can be obtained in this way for each of the n observations, from which the overall OOB MSE (for a regression problem) or classification error (for a classification  problem) can be computed. The resulting OOB error is a valid estimate of the test error for the  bagged model, since the response for each observation is predicted using only the trees that were not fit using that observation.
+
+
+## How Random Forests ensure that trees are decorrelated
+[Source: ISLR Page 320] Random forests provide an improvement over bagged trees by way of a random small tweak  that decorrelates the trees. As in bagging, we build a number  forest of decision trees on bootstrapped training samples. But when building these decision trees, each time a split in a tree is considered, a random sample of m predictors is chosen as split candidates from the full set of p predictors. The split is allowed to use only one of those m predictors. A fresh sample of √ m predictors is taken at each split, and typically we choose m ≈ p—that is, the number of predictors considered at each split is approximately equal to the square root of the total number of predictors (4 out of the 13 for the Heart data). In other words, in building a random forest, at each split in the tree, the algorithm is not even allowed to consider a majority of the available predictors. This may sound crazy, but it has a clever rationale. Suppose that there is one very strong predictor in the data set, along with a num- ber of other moderately strong predictors. Then in the collection of bagged trees, most or all of the trees will use this strong predictor in the top split. Consequently, all of the bagged trees will look quite similar to each other. Hence the predictions from the bagged trees will be highly correlated. Un- fortunately, averaging many highly correlated quantities does not lead to as large of a reduction in variance as averaging many uncorrelated quanti- ties. In particular, this means that bagging will not lead to a substantial reduction in variance over a single tree in this setting. Random forests overcome this problem by forcing each split to consider only a subset of the predictors. Therefore, on average (p − m)/p of the splits will not even consider the strong predictor, and so other predictors will have more of a chance. We can think of this process as decorrelating the trees, thereby making the average of the resulting trees less variable and hence more reliable. The main difference between bagging and random forests is the choice of predictor subset size m. For instance, if a random forest is built using m = p, then this amounts simply to bagging.
+
+## Does Random Forest overfit if we increase the number of trees
+[Source: ISLR Page 321] As with bagging, random forests will not overfit if we increase B, so in practice we use a value of B sufficiently large for the error rate to have settled down.
+## Does Boosting overfit if we increase the number of trees
+[Source: ISLR Page 323] Unlike bagging and random forests, boosting can overfit if B is too large, although this overfitting tends to occur slowly if at all. We use cross-validation to select B. (B is the number of trees)
+## Compare DT, Bagging, RF, Boosting
+
+|DT||
+| :- | :- |
+|Bagging|We build a number of decision trees on bootstrapped training samples using all the predictors|
+|RF|<p>We build a number of decision trees on bootstrapped training samples. But when building these decision trees, each time a split in a tree is considered, a random sample of m predictors is chosen as split candidates from the full set of p predictors. The split is allowed to use only one of those m predictors. A fresh sample of m predictors is taken at each split, and typically we choose m ≈ √p. </p><p>Why does RF reduce more variance as compared to Bagging? </p><p>Suppose that there is one very strong predictor in the data set, along with a number of other moderately strong predictors. Then in the collection of bagged trees, most or all of the trees will use this strong predictor in the top split. Consequently, all of the bagged trees will look quite similar to each other. Hence the predictions from the bagged trees will be highly correlated. Unfortunately, averaging many highly correlated quantities does not lead to as large of a reduction in  variance as averaging many uncorrelated quantities. In particular, this means that bagging will not lead to a substantial reduction in variance  over a single tree in this setting. Random forests overcome this  problem by forcing each split to consider only a subset of the predictors. Therefore, on average (p − m)/p of the splits will not even consider the strong predictor, and so other predictors will have more of a chance. We can think of this process as decorrelating the trees, thereby making the average of the resulting trees less variable and hence more reliable.</p>|
+|Boosting|Boosting works similar to Bagging, except that the trees are grown sequentially: each tree is grown using information from previously grown trees. Boosting does not involve bootstrap sampling; instead each tree is fit on a modified version of the original data set.|
+
+
+
+# ReSampling
+## Advantages/Disadvantages of LOOCV (Leave One Out Cross Validation)
+[Source: ISLR Page 180] 
+
+
+|LOOCV|K-Fold CV|
+| :- | :- |
+|LOOCV has the potential to be expensive to implement, since the model has to be fit n times. This can be very time consuming if n is large, and if each individual model is slow to fit.|Computationally less expensive|
+|each training set contains n − 1 observations - has lower bias|each training set contains (k − 1)n/k observations—fewer than in the LOOCV approach - has higher bias|
+|<p>LOOCV has higher variance than does k-fold CV with k<n. When we perform LOOCV, we are in effect averaging the outputs of n fitted models, each of which is trained on an almost identical set of observations; therefore, these outputs are highly (positively) correlated with each other</p><p></p>|<p>When we perform k-fold CV with k<n, we are averaging the outputs of k fitted models that are somewhat less correlated with each other, since the overlap between the training sets in each model is smaller.</p><p>Since the mean of many highly correlated quantities has higher variance than does the mean of many quantities that are not as highly correlated, the test error estimate resulting from LOOCV tends to have higher variance than does the test error estimate resulting from k-fold CV.</p>|
+
+#
+# PCA
+## Does scaling affect PCA outcome
+[Source: ISLR Page 381] If in a dataset variables are measured on different scales, then the variable with large values might have high variance. If we perform PCA on the unscaled variables, then the first principal component loading vector will have a very large loading for this high variance variable, since that variable has by far the highest variance. 
+
+It is undesirable for the principal components obtained to depend on an arbitrary choice of scaling, and hence, we typically scale each variable to have standard deviation one before we perform PCA. 
+
+What are loading vectors and score vectors?
+# Deep Learning
+## How does dropout work in deep learning algorithms
+[Dropout Regularization - Practical Aspects of Deep Learning | Coursera](https://www.coursera.org/lecture/deep-neural-network/dropout-regularization-eM33A)
+
+[Why Dropout is so effective in Deep Neural Network? | Towards Data Science](https://towardsdatascience.com/introduction-to-dropout-to-regularize-deep-neural-network-8e9d6b1d4386)
+## What is the vanishing & exploding gradient problem? How to identify it? How is it solved?
+Reference: 
+
+- [The Vanishing/Exploding Gradient Problem in Deep Neural Networks | by Kurtis Pykes | Towards Data Science](https://towardsdatascience.com/the-vanishing-exploding-gradient-problem-in-deep-neural-networks-191358470c11)
+- [The Vanishing Gradient Problem. The Problem, Its Causes, Its… | by Chi-Feng Wang | Towards Data Science](https://towardsdatascience.com/the-vanishing-gradient-problem-69bf08b15484)
+
+In a network of n hidden layers, n derivatives will be multiplied together. If the derivatives are large then the gradient will increase exponentially as we propagate down the model until they eventually explode, and this is what we call the problem of exploding gradient. Alternatively, if the derivatives are small then the gradient will decrease exponentially as we propagate through the model until it eventually vanishes, and this is the vanishing gradient problem.
+
+**Identifying Exploding gradient:**
+
+- The model is not learning much on the training data therefore resulting in a poor loss.
+- The model will have large changes in loss on each update due to the models instability.
+- The models loss will be NaN during training.
+- Model weights grow exponentially and become very large when training the model.
+- The model weights become NaN in the training phase.
+
+**Identifying Vanishing gradient:**
+
+- The model will improve very slowly during the training phase and it is also possible that training stops very early, meaning that any further training does not improve the model.
+- The weights closer to the output layer of the model would witness more of a change whereas the layers that occur closer to the input layer would not change much (if at all).
+- Model weights shrink exponentially and become very small when training the model.
+- The model weights become 0 in the training phase.
+
+**Solving gradient problem:**
+
+- Reducing the amount of Layers
+- Choosing a small learning rate so that there are no large updates in the gradients
+- Gradient Clipping (Exploding Gradients)
+- Weight Initialization
+- use other activation functions, such as ReLU, which doesn’t cause a small derivative.
+- Residual networks
+- Add batch normalization layers
+- Use LSTM Networks
+## Gradient Clipping
+References:
+
+- [Introduction to Gradient Clipping Techniques with Tensorflow | cnvrg.io](https://cnvrg.io/gradient-clipping/#:~:text=%20Gradient%20clipping%20can%20be%20applied%20in%20two,by%20value%202%20Clipping%20by%20norm%20More%20)
+- [Understanding Gradient Clipping (and How It Can Fix Exploding Gradients Problem) - neptune.ai](https://neptune.ai/blog/understanding-gradient-clipping-and-how-it-can-fix-exploding-gradients-problem)
+
+Gradient clipping involves forcing the gradients to a certain number when they go above or below a defined threshold. 
+
+**Types of Clipping techniques**
+
+Gradient clipping can be applied in two common ways:                                                          **Clipping by value** : If a gradient exceeds some threshold value, we clip that gradient to the threshold. If the gradient is less than the lower limit then we clip that too, to the lower limit of the threshold. The algorithm is as follows:
+
+g ← ∂C/∂W
+
+if ‖g‖ ≥ max\_threshold or ‖g‖ ≤ min\_threshold then
+
+` `g ← threshold (accordingly)
+
+`   `end if
+
+where max\_threshold and min\_threshold are the boundary values and between them lies a range of values that gradients can take. g, here is the gradient, and ‖g‖ is the norm of g. 
+
+**Clipping by norm**: We clip the gradients by multiplying the unit vector of the gradients with the threshold. 
+
+The algorithm is as follows:
+
+g ← ∂C/∂W
+
+if ‖g‖ ≥ threshold then
+
+`   `g ← threshold \* g/‖g‖
+
+`   `end if
+
+where the threshold is a hyperparameter, g is the gradient, and ‖g‖ is the norm of g. Since g/‖g‖ is a unit vector, after rescaling the new g will have norm equal to threshold. Note that if ‖g‖ < c, then we don’t need to do anything,
+
+Gradient clipping ensures the gradient vector g has norm at most equal to threshold. 
+## Compare Activation Functions
+Reference:
+
+[Activation Functions: Sigmoid, Tanh, ReLU, Leaky ReLU, Softmax | by Mukesh Chaudhary | Medium](https://medium.com/@cmukesh8688/activation-functions-sigmoid-tanh-relu-leaky-relu-softmax-50d3778dcea5)
+
+## Compare Loss Functions
+Reference:
+
+[Loss Function | Loss Function In Machine Learning (analyticsvidhya.com)](https://www.analyticsvidhya.com/blog/2019/08/detailed-guide-7-loss-functions-machine-learning-python-code/)
+## Compare Optimizers
+Reference:
+
+<https://www.coursera.org/learn/deep-neural-network/lecture/qcogH/mini-batch-gradient-descent>
+
+1. Gradient Descent
+
+![](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.018.png)
+
+1. Stochastic Gradient Descent - Same as Gradient descent, but for each sample
+1. Mini Batch Gradient Descent - Same as Gradient descent, but for each mini batch
+1. Gradient Descent with Momentum - Each update is not made with the current value of gradient, but with the exponential moving average of the gradients:                                                                
+
+![](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.019.png)
+
+![](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.020.png)
+
+1. Root Mean Square Propagation (RMSProp):
+
+![](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.019.png)
+
+1. Adaptive Moment Estimate (Adam)
+
+![](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.019.png)
+## How to reduce overfitting
+Adding more data
+
+Data Augmentation
+
+Dropout
+
+Early Stopping
+
+
+## Systematic Sampling
+Systematic sampling is a type of probability [sampling](https://www.investopedia.com/terms/s/sampling-distribution.asp) method in which sample members from a larger population are selected according to a random starting point but with a fixed, periodic interval. This interval, called the sampling interval, is calculated by dividing the population size by the desired sample size. Despite the sample population being selected in advance, systematic sampling is still thought of as being random if the periodic interval is determined beforehand and the starting point is random.
+### KEY TAKEAWAYS
+- Systematic sampling is a probability sampling method in which a random sample, with a fixed periodic interval, is selected from a larger population.
+- The fixed periodic interval, called the sampling interval, is calculated by dividing the population size by the desired sample size.
+- Other advantages of this methodology include eliminating the phenomenon of clustered selection and a low probability of contaminating data.
+- Disadvantages include over- or under-representation of particular patterns and a greater risk of data manipulation.
+
+## Entropy & Information Gain
+[Information Gain and Entropy Explained | Data Science - Humaneer](https://www.humaneer.org/blog/data-science-information-gain-and-entropy-explained/)
+##
+## Hypothesis Testing [Statistics - Hypothesis Testing (w3schools.com)](https://www.w3schools.com/statistics/statistics_hypothesis_testing.php)
+A statistical hypothesis is an assumption about a population which may or may not be true. Hypothesis testing is a set of formal procedures used by statisticians to either accept or reject statistical hypotheses. Statistical hypotheses are of two types:
+
+- Null hypothesis, H0 - represents a hypothesis of chance basis.
+- Alternative hypothesis, Ha - represents a hypothesis of observations which are influenced by some non-random cause.
+
+Hypothesis testing is an act in statistics whereby an analyst [tests](https://www.investopedia.com/terms/w/wilcoxon-test.asp) an assumption regarding a population parameter. The methodology employed by the analyst depends on the nature of the data used and the reason for the analysis.
+
+Hypothesis testing is used to assess the plausibility of a hypothesis by using sample data. Such data may come from a larger population, or from a data-generating process. The word "population" will be used for both of these cases in the following descriptions.
+### KEY TAKEAWAYS
+- Hypothesis testing is used to assess the plausibility of a hypothesis by using sample data.
+- The test provides evidence concerning the plausibility of the hypothesis, given the data.
+- Statistical analysts test a hypothesis by measuring and examining a random sample of the population being analyzed.
+
+## Type I & Type II Error
+## **Type I error**, also known as a **“false positive”:** the error of rejecting a null hypothesis when it is actually true. In other words, this is the error of accepting an alternative hypothesis (the real hypothesis of interest) when the results can be attributed to chance. Plainly speaking, it occurs when we are observing a difference when in truth there is none (or more specifically - no statistically significant difference). So the probability of making a type I error in a test with rejection region R is 0 P(R|H0 is true) . 
+## **Type II error**, also known as a **"false negative":** the error of not rejecting a null hypothesis when the alternative hypothesis is the true state of nature. In other words, this is the error of failing to accept an alternative hypothesis when you don't have adequate power. Plainly speaking, it occurs when we are failing to observe a difference when in truth there is one. So the probability of making a type II error in a test with rejection region R is 1 - P (R|Ha is true). The power of the test can be P (R|Ha is true).
+## p-value
+What is p-value
+
+[Understanding P-values | Definition and Examples (scribbr.com)](https://www.scribbr.com/statistics/p-value/)
+
+[P-Value Definition (investopedia.com)](https://www.investopedia.com/terms/p/p-value.asp)
+##
+## Boosting
+[Boosting Machine Learning Tutorial | Adaptive Boosting, Gradient Boosting, XGBoost | Edureka - YouTube](https://www.youtube.com/watch?v=kho6oANGu_A)
+## CNN
+How does cnn work
+## How to handle data imbalance:
+1. Under sampling/Oversampling
+1. SMOTE
+1. Better evaluation metric – like Lift, ROC curves, PR Curves
+1. Cost sensitive learning : [Cost-Sensitive Learning for Imbalanced Classification (machinelearningmastery.com)](https://machinelearningmastery.com/cost-sensitive-learning-for-imbalanced-classification/)
+1. Class weight balancing : [How To Dealing With Imbalanced Classes in Machine Learning (analyticsvidhya.com)](https://www.analyticsvidhya.com/blog/2020/10/improve-class-imbalance-class-weights/)
+1. Weighted loss function: [Handling Class Imbalance by Introducing Sample Weighting in the Loss Function | by Ishan Shrivastava | GumGum Tech Blog | Medium](https://medium.com/gumgum-tech/handling-class-imbalance-by-introducing-sample-weighting-in-the-loss-function-3bdebd8203b4)
+1. One Class SVM
+## Lift
+[Lift (data mining) - Wikipedia](https://en.wikipedia.org/wiki/Lift_%28data_mining%29)
+
+[The Lift Curve in Machine Learning explained | Learn Machine Learning (howtolearnmachinelearning.com)](https://howtolearnmachinelearning.com/articles/the-lift-curve-in-machine-learning/)
+## Logistic Regression
+[lecture05.pdf (zstevenwu.com)](https://zstevenwu.com/courses/s20/csci5525/resources/slides/lecture05.pdf)
+
+[Logit.dvi (rutgers.edu)](https://stat.rutgers.edu/home/pingli/papers/Logit.pdf)
+
+[ADAfaEPoV (cmu.edu)](https://www.stat.cmu.edu/~cshalizi/uADA/12/lectures/ch12.pdf)
+
+[A Gentle Introduction to Logistic Regression With Maximum Likelihood Estimation (machinelearningmastery.com)](https://machinelearningmastery.com/logistic-regression-with-maximum-likelihood-estimation/)
+
+[Logistic Regression and Maximum Likelihood Estimation Function | by Puja P. Pathak | CodeX | Medium](https://medium.com/codex/logistic-regression-and-maximum-likelihood-estimation-function-5d8d998245f9)
+
+## CNN
+` `[(302) C4W1L01 Computer Vision - YouTube](https://www.youtube.com/watch?v=ArPaAX_PhIs&list=PLkDaE6sCZn6Gl29AoE31iwdVwSG-KnDzF&index=1)
+## Transformers 
+[The Illustrated Transformer – Jay Alammar – Visualizing machine learning one concept at a time. (jalammar.github.io)](https://jalammar.github.io/illustrated-transformer/)
+
+<https://www.youtube.com/watch?v=QUk6jvB9RGk>
+## Positional Embeddings
+<https://www.youtube.com/watch?v=eEGDEJfP74k>
+
+<https://github.com/tensorflow/tensor2tensor/blob/23bd23b9830059fbc349381b70d9429b5c40a139/tensor2tensor/layers/common_attention.py>
+
+<https://github.com/jalammar/jalammar.github.io/blob/master/notebookes/transformer/transformer_positional_encoding_graph.ipynb>
+## BERT(Bidirectional Encoder Representations from Transformers)
+[The Illustrated BERT, ELMo, and co. (How NLP Cracked Transfer Learning) – Jay Alammar – Visualizing machine learning one concept at a time. (jalammar.github.io)](http://jalammar.github.io/illustrated-bert/)
+
+[A Visual Guide to Using BERT for the First Time – Jay Alammar – Visualizing machine learning one concept at a time. (jalammar.github.io)](http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/)
+## Word2Vec
+## ` `[Word2Vec For Word Embeddings -A Beginner's Guide - Analytics Vidhya](https://www.analyticsvidhya.com/blog/2021/07/word2vec-for-word-embeddings-a-beginners-guide/)
+
+## Deep Q Network
+[Human-level control through deep reinforcement learning (storage.googleapis.com)](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf)
+
+[deep_q_network_breakout - Colaboratory (google.com)](https://colab.research.google.com/github/keras-team/keras-io/blob/master/examples/rl/ipynb/deep_q_network_breakout.ipynb#scrollTo=2gc-Xf33zqNW)
+
+[Deep Q-Learning for Atari Breakout (keras.io)](https://keras.io/examples/rl/deep_q_network_breakout/#train)
+
+[My Journey Into Deep Q-Learning with Keras and Gym | by Gaetan Juvin | Medium](https://medium.com/@gtnjuvin/my-journey-into-deep-q-learning-with-keras-and-gym-3e779cc12762)
+
+[Q Learning Explained | Reinforcement Learning Using Python | Q Learning in AI | Edureka - YouTube](https://www.youtube.com/watch?v=DhdUlDIAG7Y)
+
+## GloVec
+[glove.pdf (stanford.edu)](https://nlp.stanford.edu/pubs/glove.pdf)
+## Time Series Forecasting
+[11 Classical Time Series Forecasting Methods in Python (Cheat Sheet) (machinelearningmastery.com)](https://machinelearningmastery.com/time-series-forecasting-methods-in-python-cheat-sheet/#:~:text=11%20Classical%20Time%20Series%20Forecasting%20Methods%20in%20Python,process%20at%20prior%20time%20...%20More%20items...%20)
+##
+## Case Study
+## [Item2Vec with Metadata: incorporating side-information in item embeddings | by Alapatimanoharsai | Swiggy Bytes](https://bytes.swiggy.com/item2vec-with-metadata-incorporating-side-information-in-item-embeddings-167fb8d3f404)
+##
+## Evaluation Metics for Recommendation systems
+
+## Data Analysis
+## Explain Boxplots
+[Understanding Boxplots. The image above is a boxplot. A boxplot… | by Michael Galarnyk | Towards Data Science](https://towardsdatascience.com/understanding-boxplots-5e2df7bcbd51)
+
+[Explaining the 68-95-99.7 rule for a Normal Distribution | by Michael Galarnyk | Towards Data Science](https://towardsdatascience.com/understanding-the-68-95-99-7-rule-for-a-normal-distribution-b7b7cbf760c2)
+## Explain QQ plots:
+[Q-Q plot - Ensure Your ML Model is Based on the Right Distribution (analyticsvidhya.com)](https://www.analyticsvidhya.com/blog/2021/09/q-q-plot-ensure-your-ml-model-is-based-on-the-right-distributions/)
+
+[Q-Q Plots Explained. Explore the powers of Q-Q plots. | by Paras Varshney | Towards Data Science](https://towardsdatascience.com/q-q-plots-explained-5aa8495426c0)
+
+[Q–Q plot - Wikipedia](https://en.wikipedia.org/wiki/Q%E2%80%93Q_plot)
+## What are the different types of sampling techniques
+1. Random Sampling
+1. Systematic Sampling
+1. Stratified Sampling vs Cluster Sampling 
+   1. [Difference Between Stratified Sampling and Cluster Sampling | Compare the Difference Between Similar Terms](https://www.differencebetween.com/difference-between-stratified-and-vs-cluster-sampling/#:~:text=%20Difference%20Between%20Stratified%20Sampling%20and%20Cluster%20Sampling,include%20homogenous%20members%20while%2C%20in%20cluster...%20More%20)
+   1. [Cluster Sampling: Definition, Method and Examples | QuestionPro](https://www.questionpro.com/blog/cluster-sampling/)
+1. Judgemental or Purposive Sampling
+   1. [Purposive Sampling: Definition, Types, Examples (formpl.us)](https://www.formpl.us/blog/purposive-sampling)
+## Questions on EDA
+matpltolib, plotly, seaborn
+
+cut 
+
+quantile
+
+plot -- qq plot box plot
+
+roc/auc
+
+applying transformations like box cox etc
+
+eda on large datasets 
+
+plot of two categoriecal variables
+
+scatter plot b/w all var
+
+heatmap
+
+corr plot
+
+iqr
+
+partition function in pandas
+
+missing value imputation for time series data
+
+life cycle of ds projects - steps taken
+
+Understanding the problem
+
+Collecting the data
+
+Cleaning the data
+
+Exploring and Analysing the the data
+
+Interpreting the results
+
+Confidence/prediction interval
+
+\-----------
+
+eda:
+
+bad data, anamolous data
+
+whether the age was possible age or not or it was a missing value
+
+not usefule data - duplicate data, 0 variance features, identifier fields, drop features with 25-30%data
+
+-- look at the data types if they are correct
+
+-- check for duplicates
+
+Missing value imputation, using, 
+
+1. descriptive statistics like mean, median, mode, or constant value
+1. Using regression/classification to predict the missing values (sklearn IterativeImputer)
+1. Regression techniques are used to interpolate/extrapolate missing values. [Interpolation vs. Extrapolation: What's the Difference? - Statology](https://www.statology.org/interpolation-vs-extrapolation/)
+
+-- create derived features
+
+Scaling: [About Feature Scaling and Normalization (sebastianraschka.com)](https://sebastianraschka.com/Articles/2014_about_feature_scaling.html)
+
+1. Algorithms sensitive to scaling: 
+1. Z-score = x-mean(x)/std(x) : mean = 0, std = 1 for the new data. If a feature has a variance that is orders of magnitude larger that others, it might dominate the objective function and make the estimator unable to learn from other features correctly as expected.
+1. Min max scaling = (X - Xmin)/(Xmax - Xmin) : range of new data = 0,1
+## Transformation
+1. Reduce the skewness of data using log,exponential, square root
+1. ` `Skewness refers to the presence of outliers in the data stretching towards right or left of the normal distribution
+1. Kurtosis is the measure of sharpness of the peak of the normal distribution
+1. Use **spatial sign** for multiple predictors: 
+## Handling Outliers
+**Detection:**
+
+1. Using z-score
+1. Using box plots
+   1. Q1 = np.percentile(data, 25, interpolation = 'midpoint')
+   1. Q2 = np.percentile(data, 50, interpolation = 'midpoint')
+   1. Q3 = np.percentile(data, 75, interpolation = 'midpoint')
+   1. IQR = Q3-Q1
+   1. Outlier = Q1 – 1.5IQR and Q3 + 1.5QIQR
+   1. print('Interquartile range is', IQR)
+
+**Treatment**:
+
+1. Drop the outlier records
+1. Cap your outlier data
+1. Assign a new value
+1. Try a new transformation
+## Encoding Categorical Variables
+1. One hot encoding:  how to do it for large vectors? [How to Handle Categorical Features | by Ashutosh Sahu | Analytics Vidhya | Medium](https://medium.com/analytics-vidhya/how-to-handle-categorical-features-ab65c3cf498e)
+1. One hot encoding with Multiple Categories: In this technique, instead of creating the new column for every category, they limit creating the new column for 10 most frequent categories.
+1. Ordinal Number Encoding: In this technique, each unique category value is given an integer value. For instance, “red” equals 1, “green” equals 2 and “blue” equals 3.
+1. Count or Frequency Encoding: In this technique we will substitute the categories by the count of the observations that show that category in the dataset
+1. Target Guided Ordinal Encoding: 
+   1. Choose a categorical variable.
+   1. Take the aggregated mean of the categorical variable and apply it to the target variable.
+   1. Assign higher integer values or a higher rank to the category with the highest mean.
+1. Mean Ordinal Encoding: Replace the category with the obtained mean value instead of assigning integer values to it.
+1. Probability Ratio Encoding: This technique is suitable for classification problems only when the target variable is binary(Either 1 or 0 or True or False). In this technique, we will substitute the category value with the probability ratio i.e. P(1)/P(0).
+   1. Using the categorical variable, evaluate the probability of the Target variable (where the output is True or 1).
+   1. Calculate the probability of the Target variable having a False or 0 output.
+   1. Calculate the probability ratio i.e. P(True or 1) / P(False or 0).
+   1. Replace the category with a probability ratio.
+1. Weight of Evidence
+
+1. Label Encoding
+
+Multivariate analysis:
+
+1. Add additional variables to the chart using hue
+1. Add additional variables to the chart using columns
+1. Using FacetGrid
+
+Common Analytics Functions 
+
+First\_value, last\_value, nth\_value, lead, lag, rank, dense\_rank, cume\_dist, percent\_value
+
+[Spark Window Functions with Examples - Spark by {Examples} (sparkbyexamples.com)](https://sparkbyexamples.com/spark/spark-sql-window-functions/)
+
+[Top 5 SQL Analytic Functions Every Data Analyst Needs to Know | by Dario Radečić | Towards Data Science](https://towardsdatascience.com/top-5-sql-analytic-functions-every-data-analyst-needs-to-know-3f32788e4ebb)
+
+[SQL Functions | SQL Functions For Data Analysis (analyticsvidhya.com)](https://www.analyticsvidhya.com/blog/2020/07/sql-functions-for-data-analysis-tasks/)
+
+[Built-in Functions - Spark 3.2.1 Documentation (apache.org)](https://spark.apache.org/docs/latest/sql-ref-functions-builtin.html#aggregate-functions)
+
+Weight of Evidence & Information Value [Weight of Evidence (WOE) and Information Value (IV) Explained (listendata.com)](https://www.listendata.com/2015/03/weight-of-evidence-woe-and-information.html#:~:text=The%20WOE%20should%20be%20monotonic%2C%20i.e.%20either%20growing,smoothing%20-%20the%20fewer%20bins%2C%20the%20more%20smoothing.)
+
+Variable Clustering
+
+Mean Replacement
+
+Some of the interesting observations we shared with client
+
+Pca working for dim reduction
+
+Normal dist: [Statistics - Standard Normal Distribution (w3schools.com)](https://www.w3schools.com/statistics/statistics_standard_normal_distribution.php)
+
+[Normal Distribution | Examples, Formulas, & Uses (scribbr.com)](https://www.scribbr.com/statistics/normal-distribution/)
+
+[Normal Distribution | What is Normal Distribution : An Ultimate Guide (analyticsvidhya.com)](https://www.analyticsvidhya.com/blog/2021/05/normal-distribution-an-ultimate-guide/)
+
+# Dynamic Programming
+
+[Dynamic Programming | Introduction - YouTube](https://www.youtube.com/watch?v=nqowUJzG-iM&list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go&index=1)
+
+[Dynamic Programming - Learn to Solve Algorithmic Problems & Coding Challenges - YouTube](https://www.youtube.com/watch?v=oBt53YbR9Kk)
+
+
+Hypothesis testing
+
+Confidence interval/prediction inte
+
+Algorithms sensitive to outliers/scaling/categorical vari/missing values
+
+Bellman eq
+
+Equation for expectation
+
+
+
+
+
+
+
+
+
+
+AMAZON INTERVIEW EXPERIENCE
+
+“Failure is an option here. If things are not failing, you are not innovating enough.” - Elon Musk
+
+Hi Peeps,
+I had been interviewed for the position of Data Scientist I at [Amazon](https://www.linkedin.com/company/amazon/) last month, though the interview process was not completed, yet sharing the experience which might help aspirants. Just a note, this was one of the toughest interview process I had gone through.
+
+\1. Elimination Round 1: Evaluation of your technical skills on the basis of Statistics and Machine Learning: Viva + Coding
+\- What are the type of ML models you have worked with?
+\- What are the Linear Assumptions and how do we verify it?
+\- How do you explain precision and recall to a Business Stakeholder?
+\- For credit card fraud detection which is more important: precision or recall?
+\- What is overfitting and how do you deal with it? What is regularisation?
+\- How are decision trees created? What is the difference between Gini Impurity and Information Gain?
+\- What are ADS pre-processing steps before training a model?
+\- Write a code in python to count the occurrence of each item in a list as a dictionary key-value pair
+\- Write the pseudo code for the backend of .fit for logistic regression.
+
+\2. Elimination Round 2: Same as above but viva only
+\- What are the evaluation metrics used for Linear Regression?
+\- What is regularisation? Explain L1 & L2 with use cases
+\- What are the sampling techniques you have used?
+\- How do you explain hypothesis testing to a newbie and explain any hypothesis testing method that you have used? What is p-value?
+\- What is feature selection and explain any two methods?
+\- What is the difference between bagging and boosting?
+
+\3. Behavioural Round 1: Extensive Discussion on Projects and Work Ethics
+\- Project explanation: Solution Framework + Impact Metrics
+\- Sprint wise Deliverable Explanation and Individual Contribution
+\- Client Communication and Project Management
+\- Questions on ML
+\* Feature Engineering and Rolling Metrics
+\* XGBoost Working Principle and hyper parameters
+\* CatBoost
+\* Clustering
+\* Classical Neural Network
+\* Techniques you have used to improve model efficiency
+
+\4. Behavioural Round 2: Same as above but interviewed by a Senior
+\- Project explanation: Solution Framework + Impact Metrics
+\- How do you approach a problem? Explain end-to-end.
+\- How differently would you do things if you were provided extra band-width for your projects?
+\- What model would you select for a ML based approach?
+\- Describe a case where you have solved an ambiguous business problem using machine learning
+\- Role Description and Expectation
+
+
+
+
+
+
+#
+# Appendix
+
+## Properties of Covariance matrix
+1. Covariance matrices are symmetric
+
+## Properties of Projection Matrix (P)
+1. It is symmetric. PT=P.
+1. Projecting again does not change the project. P2 = P
+## How to sample from Normal distribution?
+
+## SVD
+1. Any matrix has SVD
+
+
+# References
+- <https://www.youtube.com/watch?v=Y_Ac6KiQ1t0&list=PL49CF3715CB9EF31D&index=15>
+- <https://waxworksmath.com/Authors/G_M/Hastie/WriteUp/Weatherwax_Epstein_Hastie_Solution_Manual.pdf>
+
+- <https://stats.stackexchange.com/questions/204115/understanding-bias-variance-tradeoff-derivation>
+- <https://getd.libs.uga.edu/pdfs/ma_james_c_201412_ms.pdf>
+- <https://web.stanford.edu/class/archive/cs/cs109/cs109.1178/lectureHandouts/220-logistic-regression.pdf>
+- <https://rpubs.com/ppaquay/65560>
+- <https://www.stat.cmu.edu/~ryantibs/advmethods/notes/addmodels.pdf>
+- <http://www.few.vu.nl/~wvanwie/Courses/HighdimensionalDataAnalysis/WNvanWieringen_HDDA_Lecture56_LassoRegression_20182019.pdf>
+- <https://statweb.stanford.edu/~owen/courses/305a/Rudyregularization.pdf>
+- <http://ssli.ee.washington.edu/courses/ee511/HW/hw3_solns.pdf>
+
+

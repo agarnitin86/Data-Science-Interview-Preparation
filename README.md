@@ -9,7 +9,7 @@ ESLR = Elements of Statistical Learning
 
 
 |**Generative**|**Discriminative**|
-| :-: | :-: |
+| :-- | :-- |
 |Generative models aim to capture the actual distribution of the classes in the dataset.|Discriminative models model the decision boundary for the dataset classes.|
 |Generative models predict the joint probability distribution – p(x,y) – utilizing [Bayes Theorem](https://www.unite.ai/what-is-bayes-theorem/).|<p>Discriminative models learn the conditional probability – p(y|x).</p><p></p>|
 |Generative models are computationally expensive compared to discriminative models.|<p>Discriminative models are computationally cheap compared to generative models.</p><p></p>|

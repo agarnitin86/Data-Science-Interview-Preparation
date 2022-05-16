@@ -7,6 +7,23 @@
 1. Regularized Discriminant Analysis ***[Source: ESLR Page-112]*** ![](images/ds-interview/Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.007.png) 
 1. Logistic Regression
 
+## What is log odds?
+1. [Log Oddds Definition](https://www.statisticshowto.com/log-odds/#:~:text=Taking%20the%20logarithm%20of%20the,p%2F(1%2Dp)%5D)
+2. [What and Why of Log Odds](https://towardsdatascience.com/https-towardsdatascience-com-what-and-why-of-log-odds-64ba988bf704)
+
+The odds ratio is the probability of success/probability of failure. As an equation, that’s P(A)/P(-A), where P(A) is the probability of A, and P(-A) the probability of ‘not A’ (i.e. the complement of A).
+
+Taking the logarithm of the odds ratio gives us the log odds of A, which can be written as
+
+log(A) = log(P(A)/P(-A)),
+Since the probability of an event happening, P(-A) is equal to the probability of an event not happening, 1 – P(A), we can write the log odds as
+
+<img src="https://latex.codecogs.com/svg.image?log\frac{p}{(1-p)}">
+
+Where:
+p = the probability of an event happening
+1 – p = the probability of an event not happening
+
 ## Resources to understand MLE estimation for Logistic Regression
 1. [lecture05.pdf (zstevenwu.com)](https://zstevenwu.com/courses/s20/csci5525/resources/slides/lecture05.pdf)
 1. [Logit.dvi (rutgers.edu)](https://stat.rutgers.edu/home/pingli/papers/Logit.pdf)
@@ -29,15 +46,15 @@
 
 
 |**Linear DA**|**Quadratic DA**|
-| :-: | :-: |
-|All the classes have common covariance matrix Σk = Σ ∀ *k*|Each class has its own covariance matrix, Σk|
+| :-- | :-- |
+|All the classes have common covariance matrix Σ<sub>k</sub> = Σ ∀ *k*|Each class has its own covariance matrix, Σ<sub>k</sub>|
 |Decision boundary- Linear|Decision boundary- Quadratic|
-|Discriminant Function![](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.008.png)|<p>Discriminant Function</p><p>![](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.009.png)</p>|
+|Discriminant Function![](images/ds-interview/Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.008.png)|<p>Discriminant Function</p><p>![](images/ds-interview/Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.009.png)</p>|
 |Since covariance matrices is common for all classes no such problem|Since separate covariance matrices must be computed for each class, when p (#Features) is large, number of parameters increases dramatically.|
-|[Source: ISLR Page 142] LDA classifier results from assuming that the observations within each class come from a normal distribution with a class-specific mean vector and a common variance σ2|[Source: ISLR Page 142] LDA classifier results from assuming that the observations within each class come from a normal distribution with a class-specific mean vector and covariance matrix Σk|
+|***[Source: ISLR Page-142]*** LDA classifier results from assuming that the observations within each class come from a normal distribution with a class-specific mean vector and a common variance σ<sup>2</sup>|***[Source: ISLR Page-142]*** QDA classifier results from assuming that the observations within each class come from a normal distribution with a class-specific mean vector and covariance matrix Σ<sub>k</sub>|
 |With p predictors, estimating a covariance matrix requires estimating p(p+1)/2 parameters. |With p predictors and K classses, estimating a covariance matrix requires estimating K.p(p+1)/2 parameters|
 |LDA is a much less flexible classifier|QDA is a more flexible classifier|
-|Can have low variance high bias||
+|Can have low variance high bias|Can have high variance low bias|
 
 #
 # Logistic Regression
@@ -47,7 +64,7 @@
 
 ## Log odds
 
-![](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.010.png)
+![](images/ds-interview/Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.010.png)
 
 ## How to fit a logistic regression model?
 A.2. Although we could use (non-linear) least squares to fit the logistic model , the more general method of maximum likelihood is preferred, since it has better statistical properties.

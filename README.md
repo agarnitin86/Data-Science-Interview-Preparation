@@ -781,6 +781,13 @@ Bellman eq
 Equation for expectation
 
 
+# Model Optimization
+
+Compression techniques - pruning, quantization, distillation, etc.
+Train time optimization - Gradient checkpointing, Gradient Accumulation, etc.
+Distributed Multiple GPU - Model Parallelism
+
+Research paper- Training Depp nets with Sublinear Memory cost
 
 
 
@@ -789,51 +796,6 @@ Equation for expectation
 
 
 
-AMAZON INTERVIEW EXPERIENCE
-
-“Failure is an option here. If things are not failing, you are not innovating enough.” - Elon Musk
-
-Hi Peeps,
-I had been interviewed for the position of Data Scientist I at [Amazon](https://www.linkedin.com/company/amazon/) last month, though the interview process was not completed, yet sharing the experience which might help aspirants. Just a note, this was one of the toughest interview process I had gone through.
-
-\1. Elimination Round 1: Evaluation of your technical skills on the basis of Statistics and Machine Learning: Viva + Coding
-\- What are the type of ML models you have worked with?
-\- What are the Linear Assumptions and how do we verify it?
-\- How do you explain precision and recall to a Business Stakeholder?
-\- For credit card fraud detection which is more important: precision or recall?
-\- What is overfitting and how do you deal with it? What is regularisation?
-\- How are decision trees created? What is the difference between Gini Impurity and Information Gain?
-\- What are ADS pre-processing steps before training a model?
-\- Write a code in python to count the occurrence of each item in a list as a dictionary key-value pair
-\- Write the pseudo code for the backend of .fit for logistic regression.
-
-\2. Elimination Round 2: Same as above but viva only
-\- What are the evaluation metrics used for Linear Regression?
-\- What is regularisation? Explain L1 & L2 with use cases
-\- What are the sampling techniques you have used?
-\- How do you explain hypothesis testing to a newbie and explain any hypothesis testing method that you have used? What is p-value?
-\- What is feature selection and explain any two methods?
-\- What is the difference between bagging and boosting?
-
-\3. Behavioural Round 1: Extensive Discussion on Projects and Work Ethics
-\- Project explanation: Solution Framework + Impact Metrics
-\- Sprint wise Deliverable Explanation and Individual Contribution
-\- Client Communication and Project Management
-\- Questions on ML
-\* Feature Engineering and Rolling Metrics
-\* XGBoost Working Principle and hyper parameters
-\* CatBoost
-\* Clustering
-\* Classical Neural Network
-\* Techniques you have used to improve model efficiency
-
-\4. Behavioural Round 2: Same as above but interviewed by a Senior
-\- Project explanation: Solution Framework + Impact Metrics
-\- How do you approach a problem? Explain end-to-end.
-\- How differently would you do things if you were provided extra band-width for your projects?
-\- What model would you select for a ML based approach?
-\- Describe a case where you have solved an ambiguous business problem using machine learning
-\- Role Description and Expectation
 
 
 

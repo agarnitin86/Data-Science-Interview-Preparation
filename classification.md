@@ -24,6 +24,9 @@ Where:
 p = the probability of an event happening
 1 – p = the probability of an event not happening
 
+## MLE Estimation for Logistic Regression
+Although we could use (non-linear) least squares to fit the logistic model , the more general method of maximum likelihood is preferred, since it has better statistical properties.
+
 ## Resources to understand MLE estimation for Logistic Regression
 1. [lecture05.pdf (zstevenwu.com)](https://zstevenwu.com/courses/s20/csci5525/resources/slides/lecture05.pdf)
 1. [Logit.dvi (rutgers.edu)](https://stat.rutgers.edu/home/pingli/papers/Logit.pdf)
@@ -56,18 +59,12 @@ p = the probability of an event happening
 |LDA is a much less flexible classifier|QDA is a more flexible classifier|
 |Can have low variance high bias|Can have high variance low bias|
 
-#
-# Logistic Regression
-
-## Write the Logistic Function
-
-
 ## Log odds
 
 ![](images/ds-interview/Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.010.png)
 
 ## How to fit a logistic regression model?
-A.2. Although we could use (non-linear) least squares to fit the logistic model , the more general method of maximum likelihood is preferred, since it has better statistical properties.
+A.2. 
 
 ## Classification Evaluation Metrics
 1. Sensitivity = Recall = True Positive Rate

@@ -522,6 +522,7 @@ Hypothesis testing is used to assess the plausibility of a hypothesis by using s
 - Statistical analysts test a hypothesis by measuring and examining a random sample of the population being analyzed.
 
 ## Type I & Type II Error
+
 ## **Type I error**, also known as a **“false positive”:** the error of rejecting a null hypothesis when it is actually true. In other words, this is the error of accepting an alternative hypothesis (the real hypothesis of interest) when the results can be attributed to chance. Plainly speaking, it occurs when we are observing a difference when in truth there is none (or more specifically - no statistically significant difference). So the probability of making a type I error in a test with rejection region R is 0 P(R|H0 is true) . 
 ## **Type II error**, also known as a **"false negative":** the error of not rejecting a null hypothesis when the alternative hypothesis is the true state of nature. In other words, this is the error of failing to accept an alternative hypothesis when you don't have adequate power. Plainly speaking, it occurs when we are failing to observe a difference when in truth there is one. So the probability of making a type II error in a test with rejection region R is 1 - P (R|Ha is true). The power of the test can be P (R|Ha is true).
 ## p-value

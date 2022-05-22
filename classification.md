@@ -27,6 +27,11 @@ p = the probability of an event happening
 ## MLE Estimation for Logistic Regression
 Although we could use (non-linear) least squares to fit the logistic model , the more general method of maximum likelihood is preferred, since it has better statistical properties. In logistic regression, we use the logistic function,
 <img src="https://latex.codecogs.com/svg.image?p(X)=\frac{\exp^{\beta_0&plus;\beta_1X}}{1&plus;{\exp^{\beta_0&plus;\beta_1X}}}">
+<img src="https://latex.codecogs.com/svg.image?\begin{aligned}p(X)&=\frac{\exp^{\beta_0&plus;\beta_1X}}{1&plus;{\exp^{\beta_0&plus;\beta_1X}}}\cdots\cdots(1)&space;\\1-p(X)&=1-\frac{\exp^{\beta_0&plus;\beta_1X}}{1&plus;{\exp^{\beta_0&plus;\beta_1X}}}&space;\\&=\frac{1&plus;\exp^{\beta_0&plus;\beta_1X}-\exp^{\beta_0&plus;\beta_1X}}{1&plus;{\exp^{\beta_0&plus;\beta_1X}}}&space;\\&=\frac{1}{1&plus;{\exp^{\beta_0&plus;\beta_1X}}}\cdots\cdots(2)&space;\end{aligned}">
+
+Dividing (1) by (2) & taking log on both sides,
+
+<img src="https://latex.codecogs.com/svg.image?\begin{aligned}\frac{p(X)}{1-p(X)}&=\exp^{\beta_0&plus;\beta_1X}\\log\frac{p(X)}{1-p(X)}&=\beta_0&plus;\beta_1X\end{aligned}">
 
 ## Resources to understand MLE estimation for Logistic Regression
 1. [lecture05.pdf (zstevenwu.com)](https://zstevenwu.com/courses/s20/csci5525/resources/slides/lecture05.pdf)

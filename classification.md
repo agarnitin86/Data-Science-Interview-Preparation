@@ -33,6 +33,18 @@ Dividing (1) by (2) & taking log on both sides,
 
 <img src="https://latex.codecogs.com/svg.image?\begin{aligned}\frac{p(X)}{1-p(X)}&=\exp^{\beta_0&plus;\beta_1X}\\log\frac{p(X)}{1-p(X)}&=\beta_0&plus;\beta_1X\end{aligned}">
 
+Let us make following parametric assumption:
+
+<img src="https://latex.codecogs.com/svg.image?y_i|x_i&space;=&space;Bern(\sigma(w^Tx_i))\\where,&space;\\\sigma(z)&space;=&space;\frac{1}{1&plus;\exp{(-z)}}=\frac{\exp{(z)}}{1&plus;\exp{(z)}}">
+
+MLE is used to find the model parameters while maximizing, 
+
+***P(observed data|model parameters)***
+
+For Logistic Regression, we need to find the model parameter **w** that maximizes conditional probability,
+
+
+
 ## Resources to understand MLE estimation for Logistic Regression
 1. [lecture05.pdf (zstevenwu.com)](https://zstevenwu.com/courses/s20/csci5525/resources/slides/lecture05.pdf)
 1. [Logit.dvi (rutgers.edu)](https://stat.rutgers.edu/home/pingli/papers/Logit.pdf)

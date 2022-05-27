@@ -92,5 +92,13 @@ First_value, last_value, nth_value, lead, lag, rank, dense_rank, cume_dist, perc
 
 [Built-in Functions - Spark 3.2.1 Documentation (apache.org)](https://spark.apache.org/docs/latest/sql-ref-functions-builtin.html#aggregate-functions)
 
-## Which algorithms are sensitive to feature scaling and normalization
+## Explaing Cut and quantile function in python
+## Which algorithms are sensitive to feature scaling and normalization/outliers/categorical variable/missing values
 ## What is Variable Clustering?
+## How to analyse datasets with very large number of features?
+## How to plot two categorical variables
+## How to scatter plot b/w all variables
+## What is heatmap?
+## How to create correlation plot in python?
+## How to do missing value imputation for time series data?
+

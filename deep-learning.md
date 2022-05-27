@@ -95,3 +95,41 @@ Gradient clipping ensures the gradient vector g has norm at most equal to thresh
 2. Data Augmentation 
 3. Dropout
 4. Early Stopping
+
+## CNN
+[(302) C4W1L01 Computer Vision - YouTube](https://www.youtube.com/watch?v=ArPaAX_PhIs&list=PLkDaE6sCZn6Gl29AoE31iwdVwSG-KnDzF&index=1)
+
+## Word2Vec
+[Word2Vec For Word Embeddings -A Beginner's Guide - Analytics Vidhya](https://www.analyticsvidhya.com/blog/2021/07/word2vec-for-word-embeddings-a-beginners-guide/)
+
+## GloVec
+[glove.pdf (stanford.edu)](https://nlp.stanford.edu/pubs/glove.pdf)
+
+## Positional Embeddings
+
+<https://www.youtube.com/watch?v=eEGDEJfP74k>
+
+[https://github.com/tensorflow/tensor2tensor/blob/23bd23b9830059fbc349381b70d9 429b5c40a139/tensor2tensor/layers/common_attention.py](https://github.com/tensorflow/tensor2tensor/blob/23bd23b9830059fbc349381b70d9429b5c40a139/tensor2tensor/layers/common_attention.py)
+
+[https://github.com/jalammar/jalammar.github.io/blob/master/notebookes/transforme r/transformer_positional_encoding_graph.ipynb](https://github.com/jalammar/jalammar.github.io/blob/master/notebookes/transformer/transformer_positional_encoding_graph.ipynb)
+
+## Transformers
+[The Illustrated Transformer – Jay Alammar – Visualizing machine learning one concept at a time. (jalammar.github.io)](https://jalammar.github.io/illustrated-transformer/)
+
+<https://www.youtube.com/watch?v=QUk6jvB9RGk>
+
+## BERT(Bidirectional Encoder Representations from Transformers)
+[The Illustrated BERT, ELMo, and co. (How NLP Cracked Transfer Learning) – Jay Alammar – Visualizing machine learning one concept at a time. (jalammar.github.io)](http://jalammar.github.io/illustrated-bert/)
+
+[A Visual Guide to Using BERT for the First Time – Jay Alammar – Visualizing machine learning one concept at a time. (jalammar.github.io)](http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/)
+
+## Deep Q Network
+[Human-level control through deep reinforcement learning (storage.googleapis.com) ](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf)
+
+[deep_q_network_breakout - Colaboratory (google.com)](https://colab.research.google.com/github/keras-team/keras-io/blob/master/examples/rl/ipynb/deep_q_network_breakout.ipynb#scrollTo=2gc-Xf33zqNW)
+
+[Deep Q-Learning for Atari Breakout (keras.io)](https://keras.io/examples/rl/deep_q_network_breakout/#train)
+
+[My Journey Into Deep Q-Learning with Keras and Gym | by Gaetan Juvin | Medium](https://medium.com/@gtnjuvin/my-journey-into-deep-q-learning-with-keras-and-gym-3e779cc12762)
+
+[Q Learning Explained | Reinforcement Learning Using Python | Q Learning in AI | Edureka - YouTube](https://www.youtube.com/watch?v=DhdUlDIAG7Y)

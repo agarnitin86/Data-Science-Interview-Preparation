@@ -47,3 +47,10 @@ Hypothesis testing is used to assess the plausibility of a hypothesis by using s
 **Type I error**, also known as a **“false positive”:** the error of rejecting a null hypothesis when it is actually true. In other words, this is the error of accepting an alternative hypothesis (the real hypothesis of interest) when the results can be attributed to chance. Plainly speaking, it occurs when we are observing a difference when in truth there is none (or more specifically - no statistically significant difference). So the probability of making a type I error in a test with rejection region R is 0 P(R|H<sub>0</sub> is true) . 
 
 **Type II error**, also known as a **"false negative":** the error of not rejecting a null hypothesis when the alternative hypothesis is the true state of nature. In other words, this is the error of failing to accept an alternative hypothesis when you don't have adequate power. Plainly speaking, it occurs when we are failing to observe a difference when in truth there is one. So the probability of making a type II error in a test with rejection region R is 1 - P (R|H<sub>a</sub> is true). The power of the test can be P (R|H<sub>a</sub> is true).
+
+## Normal distribution: 
+[Statistics - Standard Normal Distribution (w3schools.com)](https://www.w3schools.com/statistics/statistics_standard_normal_distribution.php)
+
+[Normal Distribution | Examples, Formulas, & Uses (scribbr.com)](https://www.scribbr.com/statistics/normal-distribution/)
+
+[Normal Distribution | What is Normal Distribution : An Ultimate Guide (analyticsvidhya.com)](https://www.analyticsvidhya.com/blog/2021/05/normal-distribution-an-ultimate-guide/)

@@ -37,6 +37,9 @@ Of course, this is not practical because we generally do not have access to mult
 
 ***[Source: ISLR Page-321]*** As with bagging, random forests will not overfit if we increase B, so in practice we use a value of B sufficiently large for the error rate to have settled down.
 
+## Boosting
+[Boosting Machine Learning Tutorial | Adaptive Boosting, Gradient Boosting, XGBoost | Edureka - YouTube](https://www.youtube.com/watch?v=kho6oANGu_A)
+
 ## Does Boosting overfit if we increase the number of trees?
 
 ***[Source: ISLR Page-323]*** Unlike bagging and random forests, boosting can overfit if B is too large, although this overfitting tends to occur slowly if at all. We use cross-validation to select B. (B is the number of trees)

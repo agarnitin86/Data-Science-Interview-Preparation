@@ -80,6 +80,13 @@
 1. Add additional variables to the chart using columns
 1. Using FacetGrid
 
+## Some basic EDA steps
+- Identifying bad and anamoulous data
+- Identifying not usefule data - duplicate data, 0 variance features, identifier fields
+- Identifying features with only 25-30% data
+- Look at the data types if they are correct
+- Check for duplicates
+
 ## Common Analytics Functions 
 
 First_value, last_value, nth_value, lead, lag, rank, dense_rank, cume_dist, percent_value

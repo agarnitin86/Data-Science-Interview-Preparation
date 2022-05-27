@@ -1,4 +1,4 @@
-Decision Trees
+## Tree Based Models
 
 ## Gini Index
 

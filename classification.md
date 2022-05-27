@@ -77,24 +77,6 @@ For Logistic Regression, we need to find the model parameter **w** that maximize
 |LDA is a much less flexible classifier|QDA is a more flexible classifier|
 |Can have low variance high bias|Can have high variance low bias|
 
-## Log odds
-
-![](images/ds-interview/Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.010.png)
-
-## How to fit a logistic regression model?
-A.2. 
-
-## Classification Evaluation Metrics
-1. Sensitivity = Recall = True Positive Rate
-   1. ` `TPTP+FN
-1. Specificity = True Negative Rate
-   1. TNTN+FP
-1. Precision
-   1. TPTP+FP
-1. False Positive Rate
-   1. FPFP+TN
-
-A.2. Although we could use (non-linear) least squares to fit the logistic model , the more general 
 ## What happens when the classes are well separated in Logistic Regression?
 A.3. When the classes are well-separated, the parameter estimates for the logistic regression model are surprisingly unstable. Linear discriminant analysis does not suffer from this problem.
 
@@ -103,6 +85,7 @@ A.3. When the classes are well-separated, the parameter estimates for the logist
 <https://stats.stackexchange.com/questions/239928/is-there-any-intuitive-explanation-of-why-logistic-regression-will-not-work-for>
 
 [Source ESLR, Page 128] If the data in a two-class logistic regression model can be perfectly separated by a hyperplane, the maximum likelihood estimates of the parameters are undefined (i.e., infinite; see Exercise 4.5). The LDA coefficients for the same data will be well defined, since the marginal likelihood will not permit these degeneracies.
+
 ## Compare SVM & Logistic Regression
 [Source ISLR, Page 357]SVM loss function is exactly zero for observations for which yi(β0 + β1xi1 + ... + βpxip) ≥ 1; these correspond to observations that are on the correct side of the margin. In contrast, the loss function for logistic regression is not exactly zero anywhere. But it is very small for observations that are far from the decision boundary. Due to the similarities between their loss functions,  logistic regression and the support vector classifier often give very similar results. When the classes are well separated, SVMs tend to behave better than logistic regression; in more overlapping regimes, logistic regression is often preferred.
 

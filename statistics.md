@@ -1,3 +1,13 @@
+## What are the different types of sampling techniques?
+
+1. Random Sampling
+1. Systematic Sampling
+1. Stratified Sampling vs Cluster Sampling 
+   1. [Difference Between Stratified Sampling and Cluster Sampling | Compare the Difference Between Similar Terms](https://www.differencebetween.com/difference-between-stratified-and-vs-cluster-sampling/#:~:text=%20Difference%20Between%20Stratified%20Sampling%20and%20Cluster%20Sampling,include%20homogenous%20members%20while%2C%20in%20cluster...%20More%20)
+   1. [Cluster Sampling: Definition, Method and Examples | QuestionPro](https://www.questionpro.com/blog/cluster-sampling/)
+1. Judgemental or Purposive Sampling
+    1. [Purposive Sampling: Definition, Types, Examples (formpl.us)](https://www.formpl.us/blog/purposive-sampling)
+
 ## Systematic Sampling
 Systematic sampling is a type of probability [sampling method](https://www.investopedia.com/terms/s/sampling-distribution.asp) in which sample members from a larger population are selected according to a random starting point but with a fixed, periodic interval. This interval, called the sampling interval, is calculated by dividing the population size by the desired sample size. Despite the sample population being selected in advance, systematic sampling is still thought of as being random if the periodic interval is determined beforehand and the starting point is random.
 

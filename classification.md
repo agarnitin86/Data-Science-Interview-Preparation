@@ -43,7 +43,7 @@ MLE is used to find the model parameters while maximizing,
 
 For Logistic Regression, we need to find the model parameter **w** that maximizes conditional probability,
 
-
+<img src="https://latex.codecogs.com/svg.image?=P(y_1,x_1,\cdots\cdots,y_n,x_n&space;|&space;\textbf{w})\\=\operatorname*{argmax}_w&space;&space;P(y_1,x_1,\cdots\cdots,y_n,x_n&space;|&space;\textbf{w})\\=\operatorname*{argmax}_w&space;&space;\prod_i^n&space;P(y_i,x_i&space;|&space;\textbf{w})&space;\cdots\cdots&space;(Independence)\\=\operatorname*{argmax}_w&space;&space;\prod_i^n&space;P(y_i&space;|&space;x_i,&space;\textbf{w})P(x_i&space;|&space;\textbf{w})\\=\operatorname*{argmax}_w&space;&space;\prod_i^n&space;P(y_i&space;|&space;x_i,&space;\textbf{w})P(x_i)\cdots\cdots(x_i\,is\,independent\,of\,\textbf{w})\\=\operatorname*{argmax}_w&space;&space;\prod_i^n&space;P(y_i&space;|&space;x_i,&space;\textbf{w})\cdots\cdots(P(x_i)\,does\,not&space;\,depend\,on\,\textbf{w})\\=\operatorname*{argmax}_w&space;&space;\prod_i^n&space;\sigma{(w^Tx_i)}^{y_i}(1-{\sigma{(w^Tx_i)}})^{1-y_i}\\\\Equivalently,we\,would\,like\,to\,find\,the\,\textbf{w}\,to\,maximize\,the\,log\,likelihood:\\\\=\ln&space;\prod_i^n{\sigma{(w^Tx_i)}^{y_i}(1-{\sigma{(w^Tx_i)}})^{1-y_i}}\\=\sum_{i}^{n}&space;\ln({\sigma{(w^Tx_i)}^{y_i}(1-{\sigma{(w^Tx_i)}})^{1-y_i}})\\=\sum_{i}^{n}&space;\ln{\sigma{(w^Tx_i)}^{y_i}&plus;\ln(1-{\sigma{(w^Tx_i)}})^{1-y_i}}\\&space;=\sum_{i}^{n}&space;({y_i}\ln{\sigma{(w^Tx_i)}&plus;({1-y_i})\ln(1-{\sigma{(w^Tx_i)}})})\\&space;&space;">
 
 ## Resources to understand MLE estimation for Logistic Regression
 1. [lecture05.pdf (zstevenwu.com)](https://zstevenwu.com/courses/s20/csci5525/resources/slides/lecture05.pdf)

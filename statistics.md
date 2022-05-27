@@ -1,0 +1,39 @@
+## Systematic Sampling
+Systematic sampling is a type of probability [sampling method](https://www.investopedia.com/terms/s/sampling-distribution.asp) in which sample members from a larger population are selected according to a random starting point but with a fixed, periodic interval. This interval, called the sampling interval, is calculated by dividing the population size by the desired sample size. Despite the sample population being selected in advance, systematic sampling is still thought of as being random if the periodic interval is determined beforehand and the starting point is random.
+
+**KEY TAKEAWAYS**
+
+- Systematic sampling is a probability sampling method in which a random sample, with a fixed periodic interval, is selected from a larger population.
+- The fixed periodic interval, called the sampling interval, is calculated by dividing the population size by the desired sample size.
+- Other advantages of this methodology include eliminating the phenomenon of clustered selection and a low probability of contaminating data.
+- Disadvantages include over- or under-representation of particular patterns and a greater risk of data manipulation.
+
+## Entropy & Information Gain
+[Information Gain and Entropy Explained | Data Science - Humaneer](https://www.humaneer.org/blog/data-science-information-gain-and-entropy-explained/)
+
+## Hypothesis Testing 
+[Statistics - Hypothesis Testing (w3schools.com)](https://www.w3schools.com/statistics/statistics_hypothesis_testing.php)
+
+A statistical hypothesis is an assumption about a population which may or may not be true. Hypothesis testing is a set of formal procedures used by statisticians to either accept or reject statistical hypotheses. Statistical hypotheses are of two types:
+
+- Null hypothesis, H<sub>0</sub> - represents a hypothesis of chance basis.
+- Alternative hypothesis, H<sub>a</sub> - represents a hypothesis of observations which are influenced by some non-random cause.
+
+Hypothesis testing is an act in statistics whereby an analyst [tests](https://www.investopedia.com/terms/w/wilcoxon-test.asp) an assumption regarding a population parameter. The methodology employed by the analyst depends on the nature of the data used and the reason for the analysis.
+
+Hypothesis testing is used to assess the plausibility of a hypothesis by using sample data. Such data may come from a larger population, or from a data-generating process. The word "population" will be used for both of these cases in the following descriptions.
+
+**KEY TAKEAWAYS**
+
+- Hypothesis testing is used to assess the plausibility of a hypothesis by using sample data.
+- The test provides evidence concerning the plausibility of the hypothesis, given the data.
+- Statistical analysts test a hypothesis by measuring and examining a random sample of the population being analyzed.
+
+## What is p-value?
+[Understanding P-values | Definition and Examples (scribbr.com) ](https://www.scribbr.com/statistics/p-value/)[P-Value Definition (investopedia.com)](https://www.investopedia.com/terms/p/p-value.asp)
+
+## Type I & Type II Error
+
+**Type I error**, also known as a **“false positive”:** the error of rejecting a null hypothesis when it is actually true. In other words, this is the error of accepting an alternative hypothesis (the real hypothesis of interest) when the results can be attributed to chance. Plainly speaking, it occurs when we are observing a difference when in truth there is none (or more specifically - no statistically significant difference). So the probability of making a type I error in a test with rejection region R is 0 P(R|H<sub>0</sub> is true) . 
+
+**Type II error**, also known as a **"false negative":** the error of not rejecting a null hypothesis when the alternative hypothesis is the true state of nature. In other words, this is the error of failing to accept an alternative hypothesis when you don't have adequate power. Plainly speaking, it occurs when we are failing to observe a difference when in truth there is one. So the probability of making a type II error in a test with rejection region R is 1 - P (R|H<sub>a</sub> is true). The power of the test can be P (R|H<sub>a</sub> is true).

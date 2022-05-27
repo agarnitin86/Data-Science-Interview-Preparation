@@ -78,14 +78,11 @@ For Logistic Regression, we need to find the model parameter **w** that maximize
 |Can have low variance high bias|Can have high variance low bias|
 
 ## What happens when the classes are well separated in Logistic Regression?
-A.3. When the classes are well-separated, the parameter estimates for the logistic regression model are surprisingly unstable. Linear discriminant analysis does not suffer from this problem.
-
+When the classes are well-separated, the parameter estimates for the logistic regression model are surprisingly unstable. Linear discriminant analysis does not suffer from this problem.
+***[Source: ESLR, Page-128]*** If the data in a two-class logistic regression model can be perfectly separated by a hyperplane, the maximum likelihood estimates of the parameters are undefined (i.e., infinite; see Exercise 4.5). The LDA coefficients for the same data will be well defined, since the marginal likelihood will not permit these degeneracies.
 <https://stats.stackexchange.com/questions/224863/understanding-complete-separation-for-logistic-regression>
-
 <https://stats.stackexchange.com/questions/239928/is-there-any-intuitive-explanation-of-why-logistic-regression-will-not-work-for>
 
-[Source ESLR, Page 128] If the data in a two-class logistic regression model can be perfectly separated by a hyperplane, the maximum likelihood estimates of the parameters are undefined (i.e., infinite; see Exercise 4.5). The LDA coefficients for the same data will be well defined, since the marginal likelihood will not permit these degeneracies.
-
 ## Compare SVM & Logistic Regression
-[Source ISLR, Page 357]SVM loss function is exactly zero for observations for which yi(β0 + β1xi1 + ... + βpxip) ≥ 1; these correspond to observations that are on the correct side of the margin. In contrast, the loss function for logistic regression is not exactly zero anywhere. But it is very small for observations that are far from the decision boundary. Due to the similarities between their loss functions,  logistic regression and the support vector classifier often give very similar results. When the classes are well separated, SVMs tend to behave better than logistic regression; in more overlapping regimes, logistic regression is often preferred.
+***[Source: ISLR Page-357]*** SVM loss function is exactly zero for observations for which <img src="https://latex.codecogs.com/svg.image?y_i(\beta_0&plus;\beta_1x_{i1}&plus;\cdots&plus;\beta_px_{ip})>=1&space;">  these correspond to observations that are on the correct side of the margin. In contrast, the loss function for logistic regression is not exactly zero anywhere. But it is very small for observations that are far from the decision boundary. Due to the similarities between their loss functions,  logistic regression and the support vector classifier often give very similar results. When the classes are well separated, SVMs tend to behave better than logistic regression; in more overlapping regimes, logistic regression is often preferred.
 

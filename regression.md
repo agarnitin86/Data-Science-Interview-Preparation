@@ -99,12 +99,12 @@ Lasso Regression:
 ![](images/ds-interview/Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.012.png)
 
 |Ridge Regression|Lasso Regression|
-| :- | :- |
-|The shrinkage penalty is applied to β1, . . . , βp , but not to the intercept β 0 . we do not want to shrink the intercept, which is simply a measure of the mean value of the response when xi1 = xi2 = . . . = xip = 0. (More explanation in ESLR pg. 64)||
-|<p>It is best to apply ridge regression after</p><p>standardizing the predictors, using the formula</p><p>![](Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.013.png)</p><p>Because, the ridge solutions are not equivariant under scaling of the inputs.</p>||
-|Ridge regression will include all p predictors in the final model. The penalty λ.Σβj2 in (6.5) will shrink all of the coefficients towards zero, but it will not set any of them exactly to zero (unless λ = ∞). This may not be a problem for prediction accuracy, but it can create a challenge in model interpretation in settings in which the number of variables p is quite large. |L1 penalty has the effect of forcing some of the coefficient estimates to be exactly equal to zero when the tuning parameter λ is sufficiently large.|
+| :-- | :-- |
+|The shrinkage penalty is applied to <img src="https://latex.codecogs.com/svg.image?\beta_1\cdots\beta_p"> , but not to the intercept <img src="https://latex.codecogs.com/svg.image?\beta_0">. We do not want to shrink the intercept, which is simply a measure of the mean value of the response when <img src="https://latex.codecogs.com/svg.image?x_{i1}=x_{i2}=\cdots=x_{ip}=0">. (More explanation in ESLR pg. 64)||
+|<p>It is best to apply ridge regression after</p><p>standardizing the predictors, using the formula</p><p>![](image/ds-interview/Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.013.png)</p><p>Because, the ridge solutions are not equivariant under scaling of the inputs.</p>||
+|Ridge regression will include all p predictors in the final model. The penalty <img src="https://latex.codecogs.com/svg.image?\lambda.\Sigma{\beta_j}^2"> in (6.5) will shrink all of the coefficients towards zero, but it will not set any of them exactly to zero (unless <img src="https://latex.codecogs.com/svg.image?\lambda=\infty">). This may not be a problem for prediction accuracy, but it can create a challenge in model interpretation in settings in which the number of variables p is quite large. |L1 penalty has the effect of forcing some of the coefficient estimates to be exactly equal to zero when the tuning parameter λ is sufficiently large.|
 |Uses l2 penalty|Uses l1 penalty|
-|The l2 norm of a coefficient vector β is given by ||β||2 = ∑βj2|The l1 norm of a coefficient vector β is given by ||β||1 = ∑|βj|.|
+|The l2 norm of a coefficient vector β is given by <img src="https://latex.codecogs.com/svg.image?\|\|\beta\|\|_2=\Sigma{\beta_j}^2">|The l1 norm of a coefficient vector β is given by <img src="https://latex.codecogs.com/svg.image?\|\|\beta\|\|_1=\Sigma\|\beta_j\|">.|
 |||
 |Will include all p predictors in the final model|Performs variable selection by setting coefficients of some to the variables to 0|
 |Does not yield sparse models|lasso yields sparse models|
